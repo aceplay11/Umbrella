@@ -1,8 +1,5 @@
 package com.example.umbrella
 
-
-
-
 //formula kelvin to celsius (x − 273.15)
 fun convertToCelsius(temp: Double): String {
     val newTemp = (temp - 273.15)

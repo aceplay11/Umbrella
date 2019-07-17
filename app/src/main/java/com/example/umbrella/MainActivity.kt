@@ -62,10 +62,9 @@ class MainActivity : AppCompatActivity() {
             R.id.btnSubmit -> {
                 if (etUserInput.text.isNotBlank()) {
                     etUserInput.setBackgroundColor(TRANSPARENT)
-                    val etZipCode = etUserInput.text.toString()
-                    Log.d("TAG", etZipCode)
-                    setSharedPreference(etZipCode)
-                    getWeatherData(etZipCode)
+                    zipCode = etUserInput.text.toString()
+                    setSharedPreference(zipCode)
+                    getWeatherData(zipCode)
 
 
                 } else {
@@ -91,8 +90,6 @@ class MainActivity : AppCompatActivity() {
             @TargetApi(Build.VERSION_CODES.LOLLIPOP)
             override fun onResponse(call: Call<CurrentWeather>, response: Response<CurrentWeather>) {
                 val currentWeather = response.body()
-                Log.d("TAG", "CurCity = ${currentWeather?.name} Current Temp is ${currentWeather?.main?.temp}")
-
 
                 if (currentWeather?.name != null) {
                     tvCityName.text = "$zipCode: ${currentWeather?.name}"
@@ -139,7 +136,7 @@ class MainActivity : AppCompatActivity() {
         callHourly.enqueue(
             object : Callback<HourlyWeather> {
                 override fun onResponse(call: Call<HourlyWeather>, response: Response<HourlyWeather>) {
-                    val hourlyWeather = response.body()
+                    val hourlyWeather = response.body()`
 
                     var tempChoice = radioGroup.checkedRadioButtonId
                     if (hourlyWeather?.city?.name != null) {
