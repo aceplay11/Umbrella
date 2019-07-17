@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Umbrella</string>
+    <string name="enter_zipcode">Enter ZipCode</string>
+    <string name="enter">Enter</string>
+    <string name="city">City</string>
+    <string name="_5day_3hour_forecast">5Day/3Hour Forecast</string>
+</resources>
