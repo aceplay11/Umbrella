@@ -136,7 +136,7 @@ class MainActivity : AppCompatActivity() {
         callHourly.enqueue(
             object : Callback<HourlyWeather> {
                 override fun onResponse(call: Call<HourlyWeather>, response: Response<HourlyWeather>) {
-                    val hourlyWeather = response.body()`
+                    val hourlyWeather = response.body()
 
                     var tempChoice = radioGroup.checkedRadioButtonId
                     if (hourlyWeather?.city?.name != null) {
